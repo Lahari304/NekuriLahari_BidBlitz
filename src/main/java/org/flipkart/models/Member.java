@@ -9,9 +9,12 @@ public class Member {
     private String memberName;
     private int superCoins;
 
-    List<Integer> bids;
+    private List<Integer> bids;
 
     public List<Integer> getBids() {
+        if(bids.isEmpty()){
+            bids = new ArrayList<>();
+        }
         return bids;
     }
 

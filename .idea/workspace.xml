@@ -5,20 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2e1a532f-efdd-4e64-8313-ac65f401cf4e" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/flipkart/BidBlitz.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/flipkart/models/Bid.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/flipkart/models/Event.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/flipkart/repositories/EventRepo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/flipkart/repositories/MemberRepo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/flipkart/services/CommonMethods.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/flipkart/services/EventService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/flipkart/BidBlitz.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/flipkart/BidBlitz.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/flipkart/models/Bid.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/flipkart/models/Bid.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/flipkart/models/Event.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/flipkart/models/Event.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/flipkart/models/Member.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/flipkart/models/Member.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/flipkart/services/CommonMethods.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/flipkart/services/CommonMethods.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/flipkart/services/EventService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/flipkart/services/EventService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,5 +63,16 @@
       <updated>1692435061740</updated>
     </task>
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>

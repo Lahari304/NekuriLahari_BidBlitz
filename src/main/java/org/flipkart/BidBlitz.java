@@ -1,8 +1,10 @@
 package org.flipkart;
 
+import org.flipkart.models.Event;
+import org.flipkart.models.Member;
 import org.flipkart.services.EventService;
 
-import java.util.Scanner;
+import java.util.*;
 
 public class BidBlitz {
     public static void main(String[] args) {
@@ -38,11 +40,21 @@ public class BidBlitz {
                     System.out.println("Member registration for event " + input[2] +" successful.");
                     break;
                 case "SUBMIT_BID ":
-                    eventService
+                    List<Integer> bids = new ArrayList<>();
+                    for(int i=0; i<input.length && i<8; i++){
+                        if(i>2){
+                            bids.add(Integer.parseInt(input[i]));
+                        }
+                    }
+                    eventService.submitBid(Integer.parseInt(input[1]), Integer.parseInt(input[2]), bids);
                     System.out.println("Bid submitted for event ");
                     break;
                 case "DECLARE_WINNER":
-                    System.out.println("is the winner for event " + input[1]);
+                    Event event = eventService.getEvent(Integer.parseInt(input[1]));
+                    Member winner = eventService.declareWinner(event);
+                    System.out.println(winner.getName() + " wins the " + event.getPrizeName()+
+                            " with highest bid ");
+                    // add bid value
                     break;
 
                 default:

@@ -49,13 +49,26 @@ public class EventService {
     public boolean submitBid(int memId, int eventId, List<Integer> bids) {
         Event event = eventRepo.getEventMap().get(eventId);
         Member member = memberRepo.getMemberMap().get(memId);
+        boolean registered = false;
+
+        for(Member mem: event.getRegisteredMembers()){
+            if(mem.equals(member)){
+                registered = true;
+            }
+        }
+
+        if(!registered) return false;
+
         member.setBids(bids);
-        event.setBids(memId, bids.get(bids.size()-1));
+        event.getBids().put(member, bids);
         return true;
     }
 
-    public String declareWinner(int eventId) {
+    public Member declareWinner(Event event) {
+        return cmn.calculateWinningBid(event);
+    }
 
-        return "";
+    public Event getEvent(int eventId){
+        eventRepo.getEventMap().get(eventId);
     }
 }

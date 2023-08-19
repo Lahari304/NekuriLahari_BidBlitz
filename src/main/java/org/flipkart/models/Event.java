@@ -12,17 +12,19 @@ public class Event {
     private String prizeName;
     private String date;
 
-    Map<Member, Integer> bids = new HashMap<>();
+    private Map<Member, List<Integer>> bids;
+    private List<Member> registeredMembers;
 
-    public Map<Member, Integer> getBids() {
+    public Map<Member, List<Integer>> getBids() {
+        if(bids.isEmpty()){
+            bids = new HashMap<>();
+        }
         return bids;
     }
 
-    public void setBids(Map<Member, Integer> bids) {
+    public void setBids(Map<Member, List<Integer>> bids) {
         this.bids = bids;
     }
-
-    List<Member> registeredMembers;
 
     public Event(int id, String eventName, String prizeName, String date) {
         this.id = id;
@@ -32,6 +34,9 @@ public class Event {
     }
 
     public List<Member> getRegisteredMembers() {
+        if(registeredMembers.isEmpty()){
+            registeredMembers = new ArrayList<>();
+        }
         return registeredMembers;
     }
 
