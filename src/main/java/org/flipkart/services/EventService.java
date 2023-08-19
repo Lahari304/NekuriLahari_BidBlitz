@@ -69,6 +69,6 @@ public class EventService {
     }
 
     public Event getEvent(int eventId){
-        eventRepo.getEventMap().get(eventId);
+        return eventRepo.getEventMap().get(eventId);
     }
 }

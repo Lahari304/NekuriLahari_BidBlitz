@@ -4,15 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2e1a532f-efdd-4e64-8313-ac65f401cf4e" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/flipkart/BidBlitz.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/flipkart/BidBlitz.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/flipkart/models/Bid.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/flipkart/models/Bid.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/flipkart/models/Event.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/flipkart/models/Event.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/flipkart/models/Member.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/flipkart/models/Member.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/flipkart/services/CommonMethods.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/flipkart/services/CommonMethods.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/flipkart/services/EventService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/flipkart/services/EventService.java" afterDir="false" />
-    </list>
+    <list default="true" id="2e1a532f-efdd-4e64-8313-ac65f401cf4e" name="Changes" comment="version 1" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -62,6 +54,14 @@
       <option name="presentableId" value="Default" />
       <updated>1692435061740</updated>
     </task>
+    <task id="LOCAL-00001" summary="version 1">
+      <created>1692444614627</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1692444614627</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -74,5 +74,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="version 1" />
+    <option name="LAST_COMMIT_MESSAGE" value="version 1" />
   </component>
 </project>
