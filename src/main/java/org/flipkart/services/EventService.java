@@ -1,7 +1,9 @@
 package org.flipkart.services;
 
+import org.flipkart.models.Bid;
 import org.flipkart.models.Event;
 import org.flipkart.models.Member;
+import org.flipkart.repositories.BidRepo;
 import org.flipkart.repositories.EventRepo;
 import org.flipkart.repositories.MemberRepo;
 
@@ -14,6 +16,8 @@ public class EventService {
     private MemberRepo memberRepo = MemberRepo.getInstance();
 
     private EventRepo eventRepo = EventRepo.getInstance();
+
+    private BidRepo bidRepo = BidRepo.getInstance();
 
     CommonMethods cmn = new CommonMethods();
 
@@ -33,7 +37,7 @@ public class EventService {
     public boolean addEvent(int id, String eventName, String prizeName, String date) {
         if (eventRepo.getEventMap().isEmpty() || !eventRepo.getIds().contains(id)) {
             eventRepo.getIds().add(id);
-            Event event = new Event(id, eventName, prizeName, date);
+            Event event = new Event(id, eventName, prizeName, cmn.generateDateTokens(date));
             eventRepo.getEventMap().put(id, event);
         } else return false;
         return true;
@@ -46,7 +50,7 @@ public class EventService {
         return true;
     }
 
-    public boolean submitBid(int memId, int eventId, List<Integer> bids) {
+    public boolean submitBid(int memId, int eventId, List<Integer> values) {
         Event event = eventRepo.getEventMap().get(eventId);
         Member member = memberRepo.getMemberMap().get(memId);
         boolean registered = false;
@@ -59,16 +63,21 @@ public class EventService {
 
         if(!registered) return false;
 
-        member.setBids(bids);
-        event.getBids().put(member, bids);
+        Bid bid = new Bid(values, memId, eventId);
+
+        event.getBids().put(member, bid);
         return true;
     }
 
-    public Member declareWinner(Event event) {
+    public Bid declareWinner(Event event) {
         return cmn.calculateWinningBid(event);
     }
 
     public Event getEvent(int eventId){
         return eventRepo.getEventMap().get(eventId);
+    }
+
+    public Member getMemberbyId(int memId){
+        return memberRepo.getMemberMap().get(memId);
     }
 }

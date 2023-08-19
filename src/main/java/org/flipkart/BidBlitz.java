@@ -1,5 +1,6 @@
 package org.flipkart;
 
+import org.flipkart.models.Bid;
 import org.flipkart.models.Event;
 import org.flipkart.models.Member;
 import org.flipkart.services.EventService;
@@ -51,9 +52,10 @@ public class BidBlitz {
                     break;
                 case "DECLARE_WINNER":
                     Event event = eventService.getEvent(Integer.parseInt(input[1]));
-                    Member winner = eventService.declareWinner(event);
+                    Bid winnerBid = eventService.declareWinner(event);
+                    Member winner = eventService.getMemberbyId(winnerBid.getMemId());
                     System.out.println(winner.getName() + " wins the " + event.getPrizeName()+
-                            " with highest bid ");
+                            " with highest bid " + winnerBid.getMaxBid());
                     // add bid value
                     break;
 

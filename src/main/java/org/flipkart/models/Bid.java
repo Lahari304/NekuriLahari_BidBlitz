@@ -1,27 +1,38 @@
 package org.flipkart.models;
 
+import java.util.Date;
+import java.util.List;
+
 public class Bid {
 
-    int value;
-    String time;
-
+    List<Integer> values;
+    Date date;
     int memId;
     int eventId;
+    int maxBid;
 
-    public int getValue() {
-        return value;
+    public int getMaxBid() {
+        return maxBid;
     }
 
-    public void setValue(int value) {
-        this.value = value;
+    public void setMaxBid(int maxBid) {
+        this.maxBid = maxBid;
     }
 
-    public String getTime() {
-        return time;
+    public Bid(List<Integer> value, int memId, int eventId) {
+        this.values = value;
+        this.memId = memId;
+        this.eventId = eventId;
+
+        this.date = new Date();
     }
 
-    public void setTime(String time) {
-        this.time = time;
+    public List<Integer> getValues() {
+        return values;
+    }
+
+    public void setValues(List<Integer> value) {
+        this.values = value;
     }
 
     public int getMemId() {
@@ -38,5 +49,9 @@ public class Bid {
 
     public void setEventId(int eventId) {
         this.eventId = eventId;
+    }
+
+    public Date getDate() {
+        return date;
     }
 }

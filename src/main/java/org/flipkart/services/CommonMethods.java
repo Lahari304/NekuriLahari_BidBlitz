@@ -1,12 +1,10 @@
 package org.flipkart.services;
 
+import org.flipkart.models.Bid;
 import org.flipkart.models.Event;
 import org.flipkart.models.Member;
 
-import java.util.List;
-import java.util.Map;
-import java.util.Random;
-import java.util.Set;
+import java.util.*;
 
 public class CommonMethods {
 
@@ -23,26 +21,44 @@ public class CommonMethods {
         return generated;
     }
 
-    public Member calculateWinningBid(Event event){
-        int maxBid = 0, secMax = 0;
-        Member winningMem = null, runner = null;
+    public int[] generateDateTokens(String date){
 
-        Map<Member, List<Integer>> bids = event.getBids();
+        int [] dateTokens = new int[3];
+        int i =0;
+        for(String s: date.split("-")){
+            dateTokens[i++] = Integer.parseInt(s);
+        }
+
+        return dateTokens;
+    }
+
+    public Bid calculateWinningBid(Event event){
+        Bid winningBid = null, runnerBid = null;
+        int maxVal = 0;
+
+        Map<Member, Bid> bids = event.getBids();
 
         for(Member mem : event.getRegisteredMembers()){
             if(bids.get(mem) != null){
-                int currMax = findMaxBid(bids.get(mem));
-                if(currMax >= maxBid){
-                    secMax = maxBid;
-                    maxBid = currMax;
-
-                    runner = (winningMem == null) ? mem : winningMem;
-                    winningMem = mem;
+                Bid currBid = bids.get(mem);
+                int currMax = findMaxBid(currBid.getValues());
+                currBid.setMaxBid(currMax);
+                if(currMax > maxVal){
+                    runnerBid = (winningBid == null)? currBid : winningBid;
+                    winningBid = currBid;
+                    maxVal = currMax;
+                }
+                if(currMax == maxVal){
+                    if(winningBid == null) winningBid = currBid;
+                    if(winningBid.getDate().compareTo(currBid.getDate()) > 0){
+                        runnerBid = winningBid;
+                        winningBid = currBid;
+                    }
                 }
             }
         }
 
-        return winningMem;
+        return winningBid;
     }
 
     private int findMaxBid(List<Integer> bids){
